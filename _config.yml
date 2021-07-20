@@ -19,7 +19,7 @@ locale                   : "ko-KR"
 title                    : "Fundamental"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
-name                     : "YW Kim"
+name                     : "ywkim"
 description              : "An amazing website."
 url                      : "https://ywkim92.github.io"
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -101,17 +101,17 @@ analytics:
 
 # Site Author
 author:
-  name             : "Your Name"
+  name             : "Yeongwoon Kim"
   avatar           : # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio              : "I am an **amazing** person."
+  bio              : "Stick to the basics."
   location         : "Seoul"
   email            :
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:ywkim@algorithmlabs.co.kr"
-    - label: "Website"
-      icon: "fas fa-fw fa-linkedin"
+    - label: "Linkedin"
+      icon: "fab fa-linkedin-in"
       url: "https://www.linkedin.com/in/yeongwoon-kim/"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
