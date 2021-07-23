@@ -15,7 +15,7 @@
 minimal_mistakes_skin    : "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 
 # Site Settings
-locale                   : "ko-KR"
+locale                   : "en-US"
 title                    : "Fundamental"
 title_separator          : "-"
 subtitle                 : # site tagline that appears below site title in masthead
@@ -104,7 +104,7 @@ author:
   name             : "Yeongwoon Kim"
   avatar           : "https://user-images.githubusercontent.com/66911578/126584516-912c9af6-07ce-4a51-aec9-6be1aa7ed147.jpg"
   bio              : "Stick to the basics."
-  location         : "Seoul"
+  location         : "Seoul, KOR"
   email            :
   links:
     - label: "Email"
