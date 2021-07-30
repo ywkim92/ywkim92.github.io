@@ -1,6 +1,6 @@
 ---
 layout: single
-title:  "6개월간 글쓰기 계획"
+title:  "[글또] 6개월간 글쓰기 계획"
 excerpt: "글또 커뮤니티 참여에 즈음하여"
 
 categories:
