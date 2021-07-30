@@ -21,6 +21,7 @@ last_modified_at: 2021-07-31
 제 이력은 특이합니다. 보는 사람에 따라 다양한 경험을 했다고 할 수도, 이리저리 방황했다고 할 수도 있겠습니다. 쓰다보니 분량이 길어져 자기소개는 아래 게시물로 갈음합니다.  
 - [자기 소개](https://ywkim92.github.io/personal/first/)
 
+
 # 참여 계기
 이공계인치고 작문에 많은 시간을 투자했고 학술적 글쓰기(과학과 인문학), 설명문, 비즈니스 메일, 기안서, 게획서 등 여러 종류의 글쓰기를 경험했습니다. 문장이 좋다는 칭찬을 학교와 직장에 자주 들었고 제 글에 대한 자부심도 있습니다. 하지만 입문한 지 얼마 안 된 분야의 실무자로서, 관심 독자층 혹은 현직자을 대상으로 한 글을 쓰기엔 주저되기 일쑤입니다. 
 
@@ -52,4 +53,4 @@ Feature importance, 변수 선택, 파생변수 생성, 인코딩, 오버샘플�
 
 [source of teaser](https://unsplash.com/photos/y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
-[Scroll to Top](#){: .btn .btn--primary }{: .align-center}
+[Scroll to Top](#){: .btn .btn--primary }{: .align-center}{: width="50%" height="50%"}
