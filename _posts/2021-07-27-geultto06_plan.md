@@ -19,7 +19,7 @@ last_modified_at: 2021-07-31
 
 # 자기소개
 제 이력은 특이합니다. 보는 사람에 따라 다양한 경험을 했다고 할 수도, 이리저리 방황했다고 할 수도 있겠습니다. 쓰다보니 분량이 길어져 자기소개는 아래 게시물로 갈음합니다.  
-- [자기 소개](https://ywkim92.github.io/personal/first/)
+- [자기소개](https://ywkim92.github.io/personal/first/)
 <br>
 
 <br />
