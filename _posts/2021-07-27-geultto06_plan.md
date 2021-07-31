@@ -59,5 +59,7 @@ Feature importance, 변수 선택, 파생변수 생성, 인코딩, 오버샘플�
 모쪼록 성실하고 꾸준하게 참여하겠습니다. 잘 부탁드립니다!
 
 [source of teaser](https://unsplash.com/photos/y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+<br>
 
+<br />
 [Scroll to Top](#){: .btn .btn--primary .btn-small .align-center}
