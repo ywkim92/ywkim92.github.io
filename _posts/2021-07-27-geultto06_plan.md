@@ -60,4 +60,4 @@ Feature importance, 변수 선택, 파생변수 생성, 인코딩, 오버샘플�
 
 [source of teaser](https://unsplash.com/photos/y02jEX_B0O0?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 
-[Scroll to Top](#){: .btn .btn--primary .btn-small .btn-center}
+[Scroll to Top](#){: .btn .btn--primary .btn-small .align-center}
