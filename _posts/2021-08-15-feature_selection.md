@@ -59,7 +59,8 @@ X, y, feature_names, _, _ = load_boston().values()
 
 
 ```python
-X_train, X_test, y_train, y_test = train_test_split(pd.DataFrame(X, columns = feature_names), pd.Series(y, name='label'), test_size = .2, random_state=42)
+X_train, X_test, y_train, y_test = train_test_split(pd.DataFrame(X, columns = feature_names), 
+									pd.Series(y, name='label'), test_size = .2, random_state=42)
 ```
 
 
@@ -319,7 +320,8 @@ class sfs:
                 candidates[f] = True
                 if self.direction == 'backward':
                     candidates = ~candidates
-                cvs = cross_val_score(estimator=self.estimator, X = X[:, candidates], y= y, cv=self.cv, scoring=self.scoring).mean()
+                cvs = cross_val_score(estimator=self.estimator, X = X[:, candidates], y= y, cv=self.cv, 
+																			scoring=self.scoring).mean()
                 dict_score[f] = cvs
             selected = max(dict_score, key=lambda x: dict_score[x])
             self.support[selected] = True
