@@ -29,7 +29,9 @@ last_modified_at: 2021-08-15
 3. 임베디드(embedded): LASSO, Ridge 등 모델 자체에 변수 선택을 위한 조건이 포함된 기법
 
 이번 시간에는 래퍼 기법 중 recursive feature elimination, sequential feature selection과 임베디드 기법인 select from model을 이해하고 파이썬 코드로 구현하며 그 결과를 scikit-learn 라이브러리의 대응되는 함수와 비교해보겠습니다.
+<br>
 
+<br />
 # 필요한 라이브러리와 데이터 불러오기
 
 Numpy, Pandas 그리고 scikit-learn에서 샘플 데이터(보스턴 주택 가격), 회귀 모델, 변수 선택 기법 등을 불러옵니다.
@@ -204,7 +206,9 @@ X_test = scaler.transform(X_test)
 ```python
 model_lr = LinearRegression()
 ```
+<br>
 
+<br />
 # Feature selection 구현
 
 ## Recursive Feature Elimination
@@ -456,8 +460,9 @@ print('sklearn == implementation?:', np.alltrue(sfm_sk.get_support() == sfm_mine
       True]
     sklearn == implementation?: True
     
+<br>
 
-
+<br />
 # 나가며
 이상으로 변수 선택 기법 중 일부에 대해 자세히 알아보았습니다. 알고리즘을 이해한 후 직접 구현하였고 그 결과를 기존 라이브러리의 결과와 비교하는 방식으로 검증했습니다. 하이퍼파라미터로는 '선택할 변수의 개수'가 있습니다. 이를 튜닝하려면 평가지표(AIC, R2, Accuracy 등)의 증감 추이에 주목해야 한다는 것도 파악했습니다.
 
