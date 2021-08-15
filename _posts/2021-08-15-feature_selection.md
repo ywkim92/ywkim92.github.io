@@ -10,7 +10,7 @@ tags:
 header:
   teaser: https://user-images.githubusercontent.com/66911578/129455808-54ecb625-ec6f-47ee-aed5-b0fadabd0e05.jpg
 toc: true
-toc_sticky: false
+toc_sticky: true
  
 date: 2021-08-15
 last_modified_at: 2021-08-15
@@ -281,7 +281,7 @@ print('sklearn == implementation?:', np.alltrue(rfe_sk.ranking_ == rfe_mine.rank
     sklearn == implementation?: True
     
 
-## Sequencial Feature Selection: forward and backward
+## Sequencial Feature Selection
 
 - **forward**
   1. 어떤 변수도 고르지 않은, 공집합에서 시작합니다. 모든 변수를 하나씩 추출하여 모델에 cross-validation으로 학습시킵니다. 스코어(default: 회귀 r2 / 분류 accuracy) 평균이 가장 높은 변수를 선택해 원소가 1개인 부분집합을 만듭니다.  
