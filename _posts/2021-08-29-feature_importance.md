@@ -6,7 +6,7 @@ excerpt: "변수의 중요도 계산"
 categories:
   - machine_learning
 tags:
-  - [machine_learning, AI, regression, feature, feature_importance, decision_tree, random_forest, impurity, mse]
+  - [machine_learning, AI, regression, classification, feature, feature_importance, decision_tree, random_forest, impurity, mse,threshold, node]
 header:
   teaser: https://user-images.githubusercontent.com/66911578/131226721-a2803380-984f-4366-b3b0-29db024a3d80.jpg
 toc: true
@@ -25,7 +25,7 @@ last_modified_at: 2021-08-29
 
 그에 비해 decision tree, random forest 등 tree-based 알고리즘에서는 feature importance attribute를 제공합니다. 변수가 tree의 성장 즉 분기에 미치는 영향력의 정도가 0과 1 사이의 실수로 표현되며 모든 importances의 합은 1입니다. regression 모델의 coefficient는 '다항식의 계수'라는 점에서 수식을 보면 직관적으로 파악할 수 있습니다. 그러나 feature importance 개념은 계산식뿐만 아니라 tree-based 알고리즘의 원리, 불순도(impurity) 등을 종합적으로 이해하고 있어야 접근 가능합니다.
 
-본 포스트에서는 간단한 decision tree 모델을 설정하고 그 모델이 학습하는 과정을 따라가며 불순도와 feature importace를 설명하겠습니다. 더불어 feature importance를 계산하는 코드를 직접 구현해보고 그 결과를 scikit-learn decision tree, random forest 모델의 `feature_importances_` attribute 결과와 비교함으로써 검증해보겠습니다.
+본 포스트에서는 간단한 decision tree 모델을 설정하고 그 모델이 학습하는 과정을 따라가며 불순도와 feature importace를 설명하겠습니다. 더불어 feature importance를 계산하는 코드를 직접 구현해보고 그 결과를 scikit-learn decision tree, random forest 모델의 `feature_importances_` 결과와 비교함으로써 검증해보겠습니다.
 <br>
 
 <br />
@@ -91,7 +91,7 @@ print('R2:',r2_score(y_test, pred_dt))
 
 ```python
 plt.figure(figsize=(20,15))
-plot_tree(model_dt, node_ids=True, fontsize=14, feature_names=data['feature_names'], filled=True)
+plot_tree(model_dt, node_ids=True, fontsize=14, feature_names= feature_names , filled=True)
 plt.show()
 ```
 
@@ -101,7 +101,7 @@ plt.show()
     
 
 
-사각형은 각각의 node를 나타냅니다. 가장 꼭대기에 있는 node 0을 'root', 더이상 분기되지 않는 node를 'leaf'라고 합니다. 상위 node를 'parent', parent에서 분기되는 두 node를 'children'이라 부릅니다. 사각형 안에는 다섯 개 줄에 걸쳐 node의 정보가 표기되어 있습니다.
+사각형은 각각의 node를 나타냅니다. 가장 꼭대기에 있는 node 0을 'root', 더이상 분기되지 않는 node를 'leaf'라고 합니다. 상위 node를 'parent', parent에서 분기되는 두 nodes를 'children'이라 부릅니다. 사각형 안에는 다섯 개 줄에 걸쳐 node의 정보가 표기되어 있습니다.
 
 1. 첫째 줄: node 번호  
 2. 둘째 줄: 분기 기준. information gain을 최대화하는 즉 impurity를 최소화하는 feature와 threshold를 선택하여 이를 기준으로 각 node에 할당되어 있는 학습 데이터 샘플을 나눕니다.  
@@ -177,7 +177,7 @@ print('sklearn == my implementation?: {}'.format(np.allclose(fi_norm, model_dt.f
 
 ## 모델 선언
 
-random forest는 bootstrap이 적용된 다양한 sub-sample 각각에 대해 서로 다른 decision tree 모델을 생성하여 학습한 후 그 결과의 평균을 채택하는 기법입니다. 이를 통해 정확도 향상과 과대 적합 방지를 기대할 수 있습니다. 모든 parameter를 default 값으로 하는 모델을 선언합니다. 이 경우, 사용하는 decision trees 개수는 100개입니다.
+random forest는 bootstrap이 적용된 다양한 sub-samples 각각에 대해 서로 다른 decision tree 모델을 생성하여 학습한 후 그 결과의 평균을 채택하는 기법입니다. 이를 통해 정확도 향상과 과대 적합 방지를 기대할 수 있습니다. 모든 parameters를 default 값으로 하는 모델을 선언합니다. 이 경우, 사용하는 decision trees 개수는 100개입니다.
 
 
 ```python
@@ -198,7 +198,7 @@ print('R2:',r2_score(y_test, pred_rf))
 
 ## Feature importance
 
-100개의 decision tree에 대해 각각 feature importance를 구한 후 모두 더한 다음 tree 개수로 나누어 줍니다.
+100개의 decision trees에 대해 각각 feature importance를 구한 후 모두 더한 다음 tree 개수로 나누어 줍니다.
 
 
 ```python
