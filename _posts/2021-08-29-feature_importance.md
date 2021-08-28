@@ -105,9 +105,9 @@ plt.show()
   - 분류  
     + gini: $\large 1-\sum_{i=1}^{k} {p_i}^2$, $k$는 class의 개수, $p_i =$ (해당 노드에서 class i에 해당하는 샘플의 개수) $\div$ (해당 노드에 할당된 모든 샘플의 개수)  
     + entropy: $\large -\sum_{i=1}^{k} p_i \log{p_i}$  
-  - 회귀
+  - 회귀  
     + mse: $\large \sum_{i=1}^n (y_i - \bar{y})^2$, $n = $ 노드의 샘플 개수, $y_i = $ i번째 샘플의 label, $\bar{y} = $ 노드의 모든 샘플의 label 평균  
-    + mae: $\large \sum_{i=1}^n |y_i - \bar{y}|$
+    + mae: $\large \sum_{i=1}^n |y_i - \bar{y}|$  
 4. 넷째 줄: node에 할당된 샘플의 개수  
 5. 다섯째 줄: node의 샘플들에 할당되는 예측값  
   - 분류: class. 이진 분류 모델이라면 0 혹은 1  
