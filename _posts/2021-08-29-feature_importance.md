@@ -11,7 +11,7 @@ header:
   teaser: https://user-images.githubusercontent.com/66911578/131226721-a2803380-984f-4366-b3b0-29db024a3d80.jpg
 toc: true
 toc_sticky: true
- 
+use_math: true
 date: 2021-08-29
 last_modified_at: 2021-08-29
 ---
