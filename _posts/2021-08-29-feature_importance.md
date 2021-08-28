@@ -21,7 +21,7 @@ last_modified_at: 2021-08-29
 
 * Linear regression:  $Y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
 
-* Logistic regression:  $\displaystyle \ln{\left(\frac{\pi}{1-\pi}\right)} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p$ where $\large \pi = P(Y=1\mid X=\mathbf{x})$
+* Logistic regression:  $\displaystyle \ln{\left(\frac{\pi}{1-\pi}\right)} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p$ where $\pi = P(Y=1\mid X=\mathbf{x})$
 
 그에 비해 decision tree, random forest 등 tree-based 알고리즘에서는 feature importance attribute를 제공합니다. 변수가 tree의 성장 즉 분기에 미치는 영향력의 정도가 0과 1 사이의 실수로 표현되며 모든 importances의 합은 1입니다. regression 모델의 coefficient는 '다항식의 계수'라는 점에서 수식을 보면 직관적으로 파악할 수 있습니다. 그러나 feature importance 개념은 계산식뿐만 아니라 tree-based 알고리즘의 원리, 불순도(impurity) 등을 종합적으로 이해하고 있어야 접근 가능합니다.
 
