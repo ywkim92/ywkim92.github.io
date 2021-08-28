@@ -25,8 +25,10 @@ last_modified_at: 2021-08-29
 
 그에 비해 decision tree, random forest 등 tree-based 알고리즘에서는 feature importance attribute를 제공합니다. 변수가 tree의 성장 즉 분기에 미치는 영향력의 정도가 0과 1 사이의 실수로 표현되며 모든 importances의 합은 1입니다. regression 모델의 coefficient는 '다항식의 계수'라는 점에서 수식을 보면 직관적으로 파악할 수 있습니다. 그러나 feature importance 개념은 계산식뿐만 아니라 tree-based 알고리즘의 원리, 불순도(impurity) 등을 종합적으로 이해하고 있어야 접근 가능합니다.
 
-본 포스트에서는 간단한 decision tree 모델을 설정하고 그 모델이 학습하는 과정을 따라가며 불순도와 feature importace를 설명하겠습니다. 더불어 feature importance를 계산하는 코드를 직접 구현해보고 그 결과를 scikit-learn의 decision tree, random forest 모델 attribute의 결과와 비교함으로써 검증해보겠습니다.
+본 포스트에서는 간단한 decision tree 모델을 설정하고 그 모델이 학습하는 과정을 따라가며 불순도와 feature importace를 설명하겠습니다. 더불어 feature importance를 계산하는 코드를 직접 구현해보고 그 결과를 scikit-learn decision tree, random forest 모델의 `feature_importances_` attribute 결과와 비교함으로써 검증해보겠습니다.
+<br>
 
+<br />
 # 필요한 라이브러리와 데이터 불러오기
 
 Numpy, Pandas, matplotlib 그리고 scikit-learn에서 샘플 데이터(보스턴 주택 가격), decision tree, random forest regression model 등을 불러옵니다.
@@ -59,7 +61,9 @@ feature_names = data['feature_names']
 ```python
 X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2, random_state=42)
 ```
+<br>
 
+<br />
 # Decision Tree
 
 ## 모델 선언
@@ -166,8 +170,9 @@ print('sklearn == my implementation?: {}'.format(np.allclose(fi_norm, model_dt.f
 ```
 
     sklearn == my implementation?: True
-    
+<br>
 
+<br />
 # Random Forest
 
 ## 모델 선언
