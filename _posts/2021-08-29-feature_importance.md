@@ -19,9 +19,9 @@ last_modified_at: 2021-08-29
 
 지난 시간에는 중요도에 따라 변수를 선택하는 방법에 대해 살폈습니다. scikit-learn에서는 중요도를 측정하는 기준으로 크게 coefficient와 feature importance를 사용합니다. 회귀 모델의 linear regression, 분류 모델의 logistic regression에서 coefficient가 큰 변수일수록 label 결정 즉 prediction에 미치는 영향력이 큽니다. 이는 수식을 통해서 쉽게 파악할 수 있습니다.
 
-* Linear regression:  $\large Y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
+* Linear regression:  $Y = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p + \varepsilon$
 
-* Logistic regression:  $\large \displaystyle \ln{\left(\frac{\pi}{1-\pi}\right)} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p$ where $\large \pi = P(Y=1\mid X=\mathbf{x})$
+* Logistic regression:  $\displaystyle \ln{\left(\frac{\pi}{1-\pi}\right)} = \beta_0 + \beta_1 x_1 + \cdots + \beta_p x_p$ where $\large \pi = P(Y=1\mid X=\mathbf{x})$
 
 그에 비해 decision tree, random forest 등 tree-based 알고리즘에서는 feature importance attribute를 제공합니다. 변수가 tree의 성장 즉 분기에 미치는 영향력의 정도가 0과 1 사이의 실수로 표현되며 모든 importances의 합은 1입니다. regression 모델의 coefficient는 '다항식의 계수'라는 점에서 수식을 보면 직관적으로 파악할 수 있습니다. 그러나 feature importance 개념은 계산식뿐만 아니라 tree-based 알고리즘의 원리, 불순도(impurity) 등을 종합적으로 이해하고 있어야 접근 가능합니다.
 
@@ -102,12 +102,10 @@ plt.show()
 1. 첫째 줄: node 번호  
 2. 둘째 줄: 분기 기준. information gain을 최대화하는 즉 impurity를 최소화하는 feature와 threshold를 선택하여 이를 기준으로 각 node에 할당되어 있는 학습 데이터 샘플을 나눕니다.  
 3. 셋째 줄: impurity. 해당 node의 불순도입니다. 분류 모델의 경우 gini와 entropy, 회귀 모델의 경우 mse와 mae를 사용합니다. 우리 모델에서는 회귀 모델 default criterion인 mse가 쓰였습니다.  
-  - 분류  
-    + gini: $\large 1-\sum_{i=1}^{k} {p_i}^2$, $k$는 class의 개수, $p_i =$ (해당 노드에서 class i에 해당하는 샘플의 개수) $\div$ (해당 노드에 할당된 모든 샘플의 개수)  
-    + entropy: $\large -\sum_{i=1}^{k} p_i \log{p_i}$  
-  - 회귀  
-    + mse: $\large \sum_{i=1}^n (y_i - \bar{y})^2$, $n = $ 노드의 샘플 개수, $y_i = $ i번째 샘플의 label, $\bar{y} = $ 노드의 모든 샘플의 label 평균  
-    + mae: $\large \sum_{i=1}^n |y_i - \bar{y}|$  
+  - 분류 gini: $1-\sum_{i=1}^{k} {p_i}^2$, $k$는 class의 개수, $p_i =$ (해당 노드에서 class i에 해당하는 샘플의 개수) $\div$ (해당 노드에 할당된 모든 샘플의 개수)  
+  - 분류 entropy: $-\sum_{i=1}^{k} p_i \log{p_i}$  
+  - 회귀 mse: $\sum_{i=1}^n (y_i - \bar{y})^2$, $n = $ 노드의 샘플 개수, $y_i = $ i번째 샘플의 label, $\bar{y} = $ 노드의 모든 샘플의 label 평균  
+  - 회귀 mae: $\sum_{i=1}^n \mid y_i - \bar{y}\mid$  
 4. 넷째 줄: node에 할당된 샘플의 개수  
 5. 다섯째 줄: node의 샘플들에 할당되는 예측값  
   - 분류: class. 이진 분류 모델이라면 0 혹은 1  
