@@ -103,11 +103,11 @@ plt.show()
 2. 둘째 줄: 분기 기준. information gain을 최대화하는 즉 impurity를 최소화하는 feature와 threshold를 선택하여 이를 기준으로 각 node에 할당되어 있는 학습 데이터 샘플을 나눕니다.  
 3. 셋째 줄: impurity. 해당 node의 불순도입니다. 분류 모델의 경우 gini와 entropy, 회귀 모델의 경우 mse와 mae를 사용합니다. 우리 모델에서는 회귀 모델 default criterion인 mse가 쓰였습니다.  
   - 분류  
-    - gini: $\large 1-\sum_{i=1}^{k} {p_i}^2$, $k$는 class의 개수, $p_i =$ (해당 노드에서 class i에 해당하는 샘플의 개수) $\div$ (해당 노드에 할당된 모든 샘플의 개수)  
-    - entropy: $\large -\sum_{i=1}^{k} p_i \log{p_i}$  
+    + gini: $\large 1-\sum_{i=1}^{k} {p_i}^2$, $k$는 class의 개수, $p_i =$ (해당 노드에서 class i에 해당하는 샘플의 개수) $\div$ (해당 노드에 할당된 모든 샘플의 개수)  
+    + entropy: $\large -\sum_{i=1}^{k} p_i \log{p_i}$  
   - 회귀
-    - mse: $\large \sum_{i=1}^n (y_i - \bar{y})^2$, $n = $ 노드의 샘플 개수, $y_i = $ i번째 샘플의 label, $\bar{y} = $ 노드의 모든 샘플의 label 평균  
-    - mae: $\large \sum_{i=1}^n |y_i - \bar{y}|$
+    + mse: $\large \sum_{i=1}^n (y_i - \bar{y})^2$, $n = $ 노드의 샘플 개수, $y_i = $ i번째 샘플의 label, $\bar{y} = $ 노드의 모든 샘플의 label 평균  
+    + mae: $\large \sum_{i=1}^n |y_i - \bar{y}|$
 4. 넷째 줄: node에 할당된 샘플의 개수  
 5. 다섯째 줄: node의 샘플들에 할당되는 예측값  
   - 분류: class. 이진 분류 모델이라면 0 혹은 1  
@@ -138,7 +138,7 @@ $\large \displaystyle \Delta I = \frac{n_t}{n} \left( I_t - \frac{n_{tl}}{n_t} I
 - `tree_.children_right`: 노드의 오른쪽 자식 노드.  
 - `tree_.n_node_samples`: 노드에 할당된 샘플 개수.  
 
-위 공식에 따라 feature importace를 구하는 코드를 구현합니다. <u>**주의할 점**</u>은 각 노드의 샘플 개수를 구할 때 `tree_.n_node_samples`이 아닌 **`tree_.weighted_n_node_samples`** 를 사용해야 한다는 것입니다. decision tree 모델에서는 `fit`할 때 특별히 sample_weight를 지정하지 않고서는 양자의 결과값이 동일하나 random forest에서는 다릅니다. random forest에서는 기본적으로 bootstrap을 사용하므로 각 tree가 학습할 때 학습 데이터를 모두 사용하지는 않으며 각 tree마다 사용하는 샘플의 개수가 조금씩 다릅니다. 그 수는 대략 '(전체 학습 데이터 개수) $\displaystyle \times  (1-\frac{1}{e})$' 입니다. 따라서 전체 학습 데이터 개수로 weighted된 샘플 개수를 써야 합니다.
+위 공식에 따라 feature importace를 구하는 코드를 구현합니다. **<u>주의할 점</u>**은 각 노드의 샘플 개수를 구할 때 `tree_.n_node_samples`이 아닌 `tree_.weighted_n_node_samples`를 사용해야 한다는 것입니다. decision tree 모델에서는 `fit`할 때 특별히 sample_weight를 지정하지 않고서는 양자의 결과값이 동일하나 random forest에서는 다릅니다. random forest에서는 기본적으로 bootstrap을 사용하므로 각 tree가 학습할 때 학습 데이터를 모두 사용하지는 않으며 각 tree마다 사용하는 샘플의 개수가 조금씩 다릅니다. 그 수는 대략 '(전체 학습 데이터 개수) $\displaystyle \times  (1-\frac{1}{e})$' 입니다. 따라서 전체 학습 데이터 개수로 weighted된 샘플 개수를 써야 합니다.
 
 
 ```python
