@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 use_math: true
 date: 2021-08-29
-last_modified_at: 2021-08-29
+last_modified_at: 2021-09-12
 ---
 # 개요
 
@@ -112,7 +112,7 @@ plt.show()
   - 회귀 mae: $\sum_{i=1}^n \mid y_i - \bar{y}\mid$  
 4. 넷째 줄: node에 할당된 샘플의 개수  
 5. 다섯째 줄: node의 샘플들에 할당되는 예측값  
-  - 분류: class. 이진 분류 모델이라면 0 혹은 1  
+  - 분류: 각 class에 해당하는 샘플의 개수를 원소로 하는 리스트. 예를 들어 class 0인 샘플이 3개, class 1인 샘플이 7개라면, `[3, 7]`. 이 값은 class probabilities를 계산하는 데 활용됩니다.  
   - 회귀: 샘플의 label의 평균
   
 위 그림에서 확인할 수 있듯, 분기를 거듭할수록 불순도(우리 모델에서는 mse)가 감소합니다. feature importance란 이 '불순도'를 감소시키는 데 각 변수가 기여한 정도를 나타냅니다.
