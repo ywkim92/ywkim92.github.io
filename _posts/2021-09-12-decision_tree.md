@@ -182,7 +182,7 @@ print('Threshold for splitting the 1st node:', model_dt.tree_.threshold[1],)
 print('\n* Using implementation')
 train_node1 = train[train['RM']<=6.941]
 print('The best splitter of the 1st node(feature, threshold):', 
-best_splitter_reg(train_node1, feature_names, model_dt.criterion))
+		best_splitter_reg(train_node1, feature_names, model_dt.criterion))
 ```
 
     * Using scikit-learn attributes
@@ -202,7 +202,7 @@ print('Threshold for splitting the 2nd node:', model_dt.tree_.threshold[2],)
 print('\n* Using implementation')
 train_node2 = train[train['RM']>6.941]
 print('The best splitter of the 1st node(feature, threshold):', 
-best_splitter_reg(train_node2, feature_names, model_dt.criterion))
+		best_splitter_reg(train_node2, feature_names, model_dt.criterion))
 ```
 
     * Using scikit-learn attributes
@@ -227,7 +227,7 @@ print('Threshold for splitting root node:', model_dt1.tree_.threshold[0])
 
 print('\n* Using implementation')
 print('The best splitter of the root node(feature, threshold):',
-best_splitter_reg(train, feature_names, model_dt1.criterion))
+		best_splitter_reg(train, feature_names, model_dt1.criterion))
 ```
 
     when criterion = "mae"
@@ -275,7 +275,8 @@ def tree_value_clf(X_train, y_train, tree_clf):
     n_node = tree_clf.tree_.node_count
     
     for i in range(n_node):
-        uniq, value = np.unique(y_train[tree_clf.decision_path(X_train).toarray()[:, i]==1], return_counts=True)
+        uniq, value = np.unique(y_train[tree_clf.decision_path(X_train).toarray()[:, i]==1], 
+			return_counts=True)
         if value.size == n_class:
             result = np.vstack((result, value))
         else:
