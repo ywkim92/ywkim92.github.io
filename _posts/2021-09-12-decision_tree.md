@@ -97,7 +97,8 @@ Best splitter를 찾기 위해 brute force 방법을 사용했습니다.
 def best_splitter_reg(node_samples, feature_names, criterion):
     '''Find the best splitter for a decision tree regressor.
     
-    node_samples: train data(pandas DataFrame) whose the last column is label and its column name is 'label'
+    node_samples: train data(pandas DataFrame) whose the last column is label 
+	and its column name is 'label'
     '''
     n = node_samples.shape[0] # the number of samples for training
     dic= dict()
@@ -160,9 +161,11 @@ def best_splitter_reg(node_samples, feature_names, criterion):
 
 
 ```python
-train = pd.DataFrame(np.hstack((X_train, y_train.reshape(-1,1))), columns=feature_names.tolist()+['label'])
+train = pd.DataFrame(np.hstack((X_train, y_train.reshape(-1,1))), 
+		columns=feature_names.tolist()+['label'])
 
-print('The best splitter of the root node(feature, threshold):',best_splitter_reg(train, feature_names, model_dt.criterion))
+print('The best splitter of the root node(feature, threshold):',
+		best_splitter_reg(train, feature_names, model_dt.criterion))
 ```
 
     The best splitter of the root node(feature, threshold): ('RM', 6.941)
@@ -178,7 +181,8 @@ print('Threshold for splitting the 1st node:', model_dt.tree_.threshold[1],)
 
 print('\n* Using implementation')
 train_node1 = train[train['RM']<=6.941]
-print('The best splitter of the 1st node(feature, threshold):', best_splitter_reg(train_node1, feature_names, model_dt.criterion))
+print('The best splitter of the 1st node(feature, threshold):', 
+best_splitter_reg(train_node1, feature_names, model_dt.criterion))
 ```
 
     * Using scikit-learn attributes
@@ -197,7 +201,8 @@ print('Threshold for splitting the 2nd node:', model_dt.tree_.threshold[2],)
 
 print('\n* Using implementation')
 train_node2 = train[train['RM']>6.941]
-print('The best splitter of the 1st node(feature, threshold):', best_splitter_reg(train_node2, feature_names, model_dt.criterion))
+print('The best splitter of the 1st node(feature, threshold):', 
+best_splitter_reg(train_node2, feature_names, model_dt.criterion))
 ```
 
     * Using scikit-learn attributes
@@ -221,7 +226,8 @@ print('Feature for splitting root node:', feature_names[model_dt1.tree_.feature[
 print('Threshold for splitting root node:', model_dt1.tree_.threshold[0])
 
 print('\n* Using implementation')
-print('The best splitter of the root node(feature, threshold):',best_splitter_reg(train, feature_names, model_dt1.criterion))
+print('The best splitter of the root node(feature, threshold):',
+best_splitter_reg(train, feature_names, model_dt1.criterion))
 ```
 
     when criterion = "mae"
