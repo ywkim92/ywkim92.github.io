@@ -8,7 +8,7 @@ categories:
 tags:
   - [machine_learning, AI, regression, classification, feature, threshold, decision_tree, tree_structure, impurity, mse, mae, variance,node, ]
 header:
-  teaser: https://user-images.githubusercontent.com/66911578/132971135-ee7a0879-9d6b-434d-9ad2-18f533f39b6f.jpg
+  teaser: https://user-images.githubusercontent.com/66911578/132971233-d3f8c972-08e3-48b4-ad2a-466685143642.jpg
 toc: true
 toc_sticky: true
 use_math: true
@@ -525,7 +525,7 @@ plt.show()
     
 ![output_39_0](https://user-images.githubusercontent.com/66911578/132970664-eb5876c2-c5f4-4709-8dd2-add2743a47cf.png)
     
-[source of teaser](https://unsplash.com/photos/W-SeuNdEEbs?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+[source of teaser](https://unsplash.com/photos/C7B-ExXpOIE?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
 <br>
 
 <br />
