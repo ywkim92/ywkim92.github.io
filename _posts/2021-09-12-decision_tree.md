@@ -13,7 +13,7 @@ toc: true
 toc_sticky: true
 use_math: true
 date: 2021-09-12
-last_modified_at: 2021-09-12
+last_modified_at: 2021-09-13
 ---
 # 개요
 
@@ -65,7 +65,7 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=.2, random_s
 
 먼저 분기 때마다 feature가 어떻게 정해지는지 찾아봤습니다. 검색 능력이 신통치 않아 적당한 레퍼런스를 발견하지 못했습니다. 다음엔 가설을 세우고 검증을 진행했습니다. 학습 데이터의 변수 중 분산이 가장 큰 (독립)변수? unique value 개수가 가장 많은 변수? (regression tree의 경우) 레이블과의 피어슨 상관계수가 가장 높은 변수? 모두 아니었습니다.
 
-그러다 Feature importance를 공부하던 중 무릎을 쳤습니다. 핵심은 **불순도 감소량(impurity decrease)** 이었습니다. scikit-learn의 의사결정나무 모델에서 parameter `splitter = 'best'`(default)로 설정했을 경우, 불순도를 가장 크게 감소시키는 feature와 threshold를 탐색해 분기 기준을 결정합니다.
+그러다 Feature importance를 공부하던 중 무릎을 쳤습니다. 핵심은 **불순도 감소량(impurity decrease)** 이었습니다. scikit-learn의 의사결정나무 모델에서 parameter `splitter = 'best'` (default)로 설정했을 경우, 불순도를 가장 크게 감소시키는 feature와 threshold를 탐색해 분기 기준을 결정합니다.
 
 간단한 회귀 트리 모델을 생성하고 위 주장을 검증해보겠습니다. 앞서 분할한 train data를 학습합니다. 최상위 root node의 분기 기준은 아래와 같습니다.
 
