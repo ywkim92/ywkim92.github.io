@@ -170,6 +170,8 @@ print('sklearn == my implementation?: {}'.format(np.allclose(fi_norm, model_dt.f
 ```
 
     sklearn == my implementation?: True
+
+
 <br>
 
 <br />
@@ -238,6 +240,7 @@ print('sklearn == my implementation?: {}'.format(np.allclose(model_rf.feature_im
     sklearn == my implementation?: True
 
 [source of teaser](https://unsplash.com/photos/qIu77BsFdds?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
 <br>
 
 <br />
