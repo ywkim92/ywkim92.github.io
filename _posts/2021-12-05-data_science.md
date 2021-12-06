@@ -58,6 +58,7 @@ last_modified_at: 2021-12-06
 다음 시간에는 비즈니스 관점에서 느낀 점을 소개해보겠습니다.
 
 [source of teaser](https://unsplash.com/photos/JiSkHnWLo2o?utm_source=unsplash&utm_medium=referral&utm_content=creditShareLink)
+
 <a name="footnote_1">1</a> Sculley, D & Holt, Gary & Golovin, Daniel & Davydov, Eugene & Phillips, Todd & Ebner, Dietmar & Chaudhary, Vinay & Young, Michael & Dennison, Dan. (2015). 
 Hidden Technical Debt in Machine Learning Systems. NIPS. 2494-2502. 
 <br>
